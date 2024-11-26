@@ -1,0 +1,149 @@
+// .container {
+//   max-width: 1000px;
+//   margin: 0 auto; /* Centrar horizontalmente */
+//   padding-top: 80px; /* Separación vertical */
+// }
+
+// .table-container {
+//   display: flex;
+//   justify-content: center; /* Centrar la tabla */
+//   margin-top: 20px; /* Ajusta el margen superior según prefieras */
+// }
+
+// .button-container {
+//   margin: 20px;
+//   text-align: center;
+//   position: relative; /* Ensure it positions correctly */
+// }
+
+// .btn {
+//   position: relative; /* Change from absolute to relative */
+//   left: auto; /* Reset left positioning */
+//   bottom: auto; /* Reset bottom positioning */
+//   padding: 10px 20px;
+//   background-color: #007bff;
+//   color: white;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// .btn:hover {
+//   background-color: #0056b3;
+// }
+
+// .table-responsive { 
+//   margin: 20px;
+// }
+
+// .table {
+//   width: 100%;
+//   border-collapse: collapse;
+//   margin-top: 200px;
+//   margin-left: 70px;
+
+//   th, td {
+//     padding: 8px;
+//     text-align: left;
+//     border-bottom: 1px solid #ddd;
+//   }
+
+//   th {
+//     background-color: #f2f2f2;
+//   }
+// }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto; /* Center horizontally */
+  padding-top: 80px; /* Vertical spacing */
+}
+
+.table-container {
+  display: flex;
+  justify-content: center; /* Center the table */
+  margin-top: 200px; /* Adjust the top margin as needed */
+  position: relative; /* Ensure the button is positioned relative to this container */
+  overflow-x: auto; /* Ensure the table is scrollable on smaller screens */
+}
+
+.button-container {
+  margin: 20px;
+  text-align: center;
+  position: relative; /* Ensure it positions correctly */
+}
+
+.btn {
+  position: relative; /* Change from absolute to relative */
+  left: auto; /* Reset left positioning */
+  bottom: auto; /* Reset bottom positioning */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.table-responsive { 
+  margin: 20px;
+}
+
+.table {
+  width: 60%; /* Make the table take full width on smaller screens */
+  border-collapse: collapse;
+  margin: 20px 0; /* Adjusted margin for better spacing */
+  font-size: 18px;
+  text-align: left;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #a7b5bb !important;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td {
+  color: #333;
+}
+
+th, td {
+  text-align: center;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .table {
+    width: 95%; /* Full width on smaller screens */
+    margin: 20px 0; /* Adjusted margin for better spacing */
+  }
+
+  th, td {
+    padding: 8px 10px; /* Reduced padding for smaller screens */
+    font-size: 16px; /* Adjusted font size for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    padding: 6px 8px; /* Further reduced padding for very small screens */
+    font-size: 14px; /* Further adjusted font size for better readability */
+  }
+}

@@ -1,0 +1,59 @@
+<app-navigation
+  class="pc-sidebar"
+  [ngClass]="{
+    'navbar-collapsed': navCollapsed,
+    'mob-open': navCollapsedMob
+  }"
+  (NavCollapse)="this.navCollapsed = !this.navCollapsed"
+/>
+
+<app-nav-bar (NavCollapsedMob)="navMobClick()" (NavCollapse)="this.navCollapsed = !this.navCollapsed"></app-nav-bar>
+
+<mat-sidenav-container class="mainWrapper blue_theme" autosize autoFocus dir="ltr">
+  <mat-sidenav-content>
+    <div class="table-container">
+      <div class="table-responsive m-t-16">
+        <!-- <button mat-button class="btn btn-top-left btn-primary mb-3" (click)="addUser()">Registrar Usuario</button> -->
+        <table mat-table [dataSource]="dataSource" class="w-100 high-contrast-table">
+          <!-- RUT Column -->
+          <ng-container matColumnDef="rut">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">RUT</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.rut }}</td>
+          </ng-container>
+
+          <!-- Nombre Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Nombre</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.nombre }}</td>
+          </ng-container>
+
+          <!-- Apellido Column -->
+          <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Apellido</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.apellido }}</td>
+          </ng-container>
+
+          <!-- Correo Column -->
+          <ng-container matColumnDef="correo">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Correo</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.correo }}</td>
+          </ng-container>
+
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Acciones</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">
+              <button mat-button class="btn btn-warning btn-sm" (click)="editUser(element)">Editar</button>
+              <button mat-button class="btn btn-danger btn-sm" (click)="deleteUser(element.rut)">Eliminar</button>
+            </td>
+          </ng-container>
+
+          <!-- Header Row -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <!-- Data Row -->
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

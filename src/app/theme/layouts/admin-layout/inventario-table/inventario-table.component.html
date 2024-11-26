@@ -1,0 +1,65 @@
+<app-navigation
+  class="pc-sidebar"
+  [ngClass]="{
+    'navbar-collapsed': navCollapsed,
+    'mob-open': navCollapsedMob
+  }"
+  (NavCollapse)="this.navCollapsed = !this.navCollapsed"
+/>
+
+<app-nav-bar (NavCollapsedMob)="navMobClick()" (NavCollapse)="this.navCollapsed = !this.navCollapsed"></app-nav-bar>
+
+<mat-sidenav-container class="mainWrapper blue_theme" autosize autoFocus dir="ltr">
+  <mat-sidenav-content>
+    <div class="table-container">
+      <button mat-button class="btn btn-top-left btn-primary mb-3" (click)="addInventario()">Registrar Inventario</button>
+      <div class="table-responsive m-t-16">
+        <table mat-table [dataSource]="dataSource" class="w-100 high-contrast-table">
+          <!-- ID Inventario Column -->
+          <ng-container matColumnDef="id_inventario">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">ID Inventario</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.id_inventario }}</td>
+          </ng-container>
+
+          <!-- ID Producto Column -->
+          <ng-container matColumnDef="id_producto">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">ID Producto</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.id_producto }}</td>
+          </ng-container>
+
+          <!-- Nombre Producto Column -->
+          <ng-container matColumnDef="nombre_producto">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Nombre Producto</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.nombre_producto }}</td>
+          </ng-container>
+
+          <!-- Cantidad Disponible Column -->
+          <ng-container matColumnDef="cantidad_disponible">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Cantidad Disponible</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.cantidad_disponible }}</td>
+          </ng-container>
+
+          <!-- Fecha Actualización Column -->
+          <ng-container matColumnDef="fecha_actualizacion">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Fecha Actualización</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">{{ element.fecha_actualizacion | date: 'short' }}</td>
+          </ng-container>
+
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14 high-contrast-header">Acciones</th>
+            <td mat-cell *matCellDef="let element" class="high-contrast-cell">
+              <button mat-button class="btn btn-warning btn-sm" (click)="editInventario(element)">Editar</button>
+              <button mat-button class="btn btn-danger btn-sm" (click)="deleteInventario(element.id_inventario)">Eliminar</button>
+            </td>
+          </ng-container>
+
+          <!-- Header Row -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <!-- Data Row -->
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

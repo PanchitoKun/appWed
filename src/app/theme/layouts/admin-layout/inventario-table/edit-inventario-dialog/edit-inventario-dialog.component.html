@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Editar Inventario</h1>
+<div mat-dialog-content>
+  <form [formGroup]="inventarioForm">
+    <mat-form-field>
+      <mat-label>ID Producto</mat-label>
+      <input matInput type="number" formControlName="id_producto">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Cantidad Disponible</mat-label>
+      <input matInput type="number" formControlName="cantidad_disponible">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha Actualización</mat-label>
+      <input matInput type="datetime-local" formControlName="fecha_actualizacion">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSave()" [disabled]="!inventarioForm.valid">Guardar</button>
+</div>

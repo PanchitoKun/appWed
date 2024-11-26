@@ -1,0 +1,51 @@
+<app-navigation
+  class="pc-sidebar"
+  [ngClass]="{
+    'navbar-collapsed': navCollapsed,
+    'mob-open': navCollapsedMob
+  }"
+  (NavCollapse)="this.navCollapsed = !this.navCollapsed"
+/>
+<app-nav-bar (NavCollapsedMob)="navMobClick()" (NavCollapse)="this.navCollapsed = !this.navCollapsed"></app-nav-bar>
+
+<div class="register-container">
+    <h2>Registro de Producto en Inventario</h2>
+  
+    <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+      <!-- ID Producto -->
+      <div class="form-group">
+        <label for="idProducto">ID Producto</label>
+        <input id="idProducto" formControlName="idProducto" class="form-control" />
+        <div *ngIf="productoForm.get('idProducto')?.invalid && productoForm.get('idProducto')?.touched">
+          <small class="text-danger">El ID de producto es obligatorio</small>
+        </div>
+      </div>
+  
+      <!-- Cantidad Disponible -->
+      <div class="form-group">
+        <label for="cantidadDisponible">Cantidad Disponible</label>
+        <input id="cantidadDisponible" formControlName="cantidadDisponible" class="form-control" type="number" />
+        <div *ngIf="productoForm.get('cantidadDisponible')?.invalid && productoForm.get('cantidadDisponible')?.touched">
+          <small class="text-danger">La cantidad debe ser mayor a 0</small>
+        </div>
+      </div>
+  
+      <!-- Fecha de Actualización -->
+      <div class="form-group">
+        <label for="fechaActualizacion">Fecha de Actualización</label>
+        <input id="fechaActualizacion" formControlName="fechaActualizacion" class="form-control" type="date" />
+        <div *ngIf="productoForm.get('fechaActualizacion')?.invalid && productoForm.get('fechaActualizacion')?.touched">
+          <small class="text-danger">La fecha de actualización es obligatoria</small>
+        </div>
+      </div>
+  
+      <!-- Botón de Registro -->
+      <button type="submit" [disabled]="productoForm.invalid" class="btn btn-primary">
+        Registrar Producto
+      </button>
+      <button type="button" (click)="goBack('/inventario-table')" class="btn-alt btn-secondary">
+        Volver
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,35 @@
+
+.register-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 10%;
+    margin-left: 40%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: absolute;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+
+  .btn-alt{
+    width: 50%;
+    margin: 20px;
+    margin-left: 25%;
+    align-self: center;
+    background-color: #AABBDD;
+    color: #000;
+    border: 1px solid #ccc;
+  }

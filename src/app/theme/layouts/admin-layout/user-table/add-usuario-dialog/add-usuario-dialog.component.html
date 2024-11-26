@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Registrar Usuario</h1>
+<div mat-dialog-content>
+  <form [formGroup]="usuarioForm">
+    <mat-form-field>
+      <mat-label>RUT</mat-label>
+      <input matInput formControlName="rut">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput type="date" formControlName="fnac">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Correo</mat-label>
+      <input matInput type="email" formControlName="correo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>ID Cargo</mat-label>
+      <mat-select formControlName="id_cargo">
+        <mat-option [value]="1">ADMINISTRADOR</mat-option>
+        <mat-option [value]="2">OPERARIO</mat-option>
+        <mat-option [value]="3">SUPERVISOR</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Huella Digital</mat-label>
+      <input matInput formControlName="huella_digital" placeholder="null">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contrato</mat-label>
+      <mat-select formControlName="contrato">
+        <mat-option value="Contrato indefinido">Contrato indefinido</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="contraseña">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSave()" [disabled]="!usuarioForm.valid">Guardar</button>
+</div>

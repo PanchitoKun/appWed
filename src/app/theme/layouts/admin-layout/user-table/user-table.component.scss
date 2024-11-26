@@ -1,0 +1,50 @@
+// .container {
+//     max-width: 1000px;
+//     margin: 0 auto;
+//     padding-top: 80px; /* Ajusta este valor para controlar cuánto quieres bajar el formulario */
+// }
+.table-container {
+    max-height: 100vh;
+    max-width: 50%;
+    margin: 0 auto;
+    padding-top: 80px; /* Adjust this value to control the top padding */
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 10% 0;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #a7b5bb !important;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    color: #333;
+}
+
+th, td {
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto;
+}

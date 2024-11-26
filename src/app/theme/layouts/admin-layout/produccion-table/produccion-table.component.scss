@@ -1,0 +1,128 @@
+// /* File: src/app/produccion-table/produccion-table.component.scss */
+// .table-responsive {
+//   margin: 20px;
+// }
+
+// .table {
+//   width: 50%;
+//   border-collapse: collapse;
+//   margin-top: 200px;
+//   margin-left: 500px;
+
+//   th, td {
+//     padding: 8px;
+//     text-align: left;
+//     border-bottom: 1px solid #ddd;
+//   }
+
+//   th {
+//     background-color: #f2f2f2;
+//   }
+// }
+
+// .button-container {
+//   margin: 20px;
+//   text-align: center;
+// }
+
+// button {
+//   padding: 10px 20px;
+//   background-color: #007bff;
+//   color: white;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// button:hover {
+//   background-color: #0056b3;
+// }
+
+/* File: src/app/produccion-table/produccion-table.component.scss */
+.table-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 80px; /* Adjust this value to control the top padding */
+  position: relative; /* Ensure the button is positioned relative to this container */
+  overflow-x: auto; /* Ensure the table is scrollable on smaller screens */
+  display: flex;
+  justify-content: center; /* Center the table horizontally */
+}
+
+table {
+  width: 60%; /* Make the table take full width on smaller screens */
+  border-collapse: collapse;
+  margin: 20px 0; /* Adjusted margin for better spacing */
+  font-size: 18px;
+  text-align: left;
+  margin-top: 15vh; 
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #a7b5bb !important;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td {
+  color: #333;
+}
+
+th, td {
+  text-align: center;
+}
+
+.button-container {
+  margin: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  table {
+      width: 55%; /* Full width on smaller screens */
+      margin: 20px 0; /* Adjusted margin for better spacing */
+
+  }
+
+  th, td {
+      padding: 8px 10px; /* Reduced padding for smaller screens */
+      font-size: 16px; /* Adjusted font size for better readability */
+      
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+      padding: 6px 8px; /* Further reduced padding for very small screens */
+      font-size: 14px; /* Further adjusted font size for better readability */
+      
+  }
+}
